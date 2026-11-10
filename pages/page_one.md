@@ -1,16 +1,27 @@
-# Page one
+# Advantages of Open Source Software
 
-## This is the headline of your first page
+## What does openness make possible?
 
-This is the first paragraph. The first paragraph after a headline is displayed in a lighter font weight.
+Open source gives users rights to inspect, modify and redistribute software under its licence. These rights matter when a program becomes part of someone's daily work.
 
-Everything you see here is written in the file **pages/page_one.md**. Change the text there, save, and reload the page. You can use **bold**, *italics*, [links](https://www.sdu.dk) and lists:
+- **Inspect the code.** A researcher can record the software version and check how it processed the data. This makes it easier to explain how a result was produced.
+- **Adapt the software.** A municipality could hire a developer to add a feature that its staff need, such as a way to export records in a format another department can read.
+- **Keep using it.** If the original developer stops maintaining a project, others can create a *fork*, a separately maintained copy. Doing so still takes skills, time and funding.
 
-- one item
-- another item
+### A student example: LibreOffice
 
-### A smaller headline
+Imagine writing an assignment in LibreOffice Writer and saving it as an `.odt` file. After graduation, the student can keep editing it without relying on a university software subscription. The distinction matters: open source gives people rights over the program's code, while an open document format makes it easier for different programs to read the file.
 
-You can also add images from the assets folder:
+![LibreOffice Writer with a document open for editing.](./assets/images/libreoffice-writer.png)
 
-![The beach at Skagen](./assets/images/skagen.jpg)
+*Figure 1. LibreOffice Writer. [Screenshot by VulcanSphere, Wikimedia Commons](https://commons.wikimedia.org/wiki/File:LibreOffice_7.2.4.1_Writer_screenshot.png).*
+
+### Who can contribute?
+
+People can improve a project without writing code. A student might report a problem with a document export, while another user could improve the instructions or translate a menu. These contributions help a project serve people whose needs may otherwise be overlooked.
+
+## Sources
+
+[Open Source Initiative: The Open Source Definition](https://opensource.org/osd)
+
+[LibreOffice: XML File Formats](https://help.libreoffice.org/latest/en-GB/text/shared/00/00000021.html)
