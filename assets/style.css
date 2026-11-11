@@ -845,3 +845,61 @@ footer {
     transform: scale(1.02) rotate(0);
   }
 }
+
+/* Solid arrows with precise positioning */
+
+#carouselBtnLeft,
+#carouselBtnRight {
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+  font-size: 0;
+}
+
+/* Hide font symbols and draw the arrows */
+
+#carouselBtnLeft::before,
+#carouselBtnRight::before {
+  content: "";
+  display: block;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 20px;
+  height: 24px;
+
+  border: 0;
+  background: currentColor;
+
+  pointer-events: none;
+}
+
+/* Move the left arrow slightly outwards */
+
+#carouselBtnLeft::before {
+  clip-path: polygon(
+    100% 0,
+    0 50%,
+    100% 100%,
+    68% 50%
+  );
+
+  transform: translate(-50%, -50%) translateX(-3px);
+}
+
+/* Move the right arrow slightly outwards */
+
+#carouselBtnRight::before {
+  clip-path: polygon(
+    0 0,
+    100% 50%,
+    0 100%,
+    32% 50%
+  );
+
+  transform: translate(-50%, -50%) translateX(3px);
+}
