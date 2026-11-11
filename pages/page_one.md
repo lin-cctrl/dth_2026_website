@@ -32,7 +32,7 @@ Imagine writing an assignment in LibreOffice Writer and saving it as an `.odt` f
 
 ### Who can contribute?
 
-People can improve a project without writing code. A student might report a problem with a document export, while another user could improve the instructions or translate a menu. These contributions help a project serve people whose needs may otherwise be overlooked.
+People can improve a project without writing code. A student might report a problem with a document export, while another user could improve the instructions or translate a menu. These contributions help projects serve overlooked users.
 
 </div>
 
@@ -43,5 +43,7 @@ People can improve a project without writing code. A student might report a prob
 [Open Source Initiative: The Open Source Definition](https://opensource.org/osd)
 
 [LibreOffice: XML File Formats](https://help.libreoffice.org/latest/en-GB/text/shared/00/00000021.html)
+
+Banner photograph: [Jantine Doornbos / Unsplash](https://unsplash.com/photos/xt9tb6oa42o), 2018.
 
 </div>

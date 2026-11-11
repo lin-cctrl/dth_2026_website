@@ -54,4 +54,6 @@ Yes, after a small trial. I would keep the original files, code definitions and 
 
 [Open Collective: Taguette funding](https://opencollective.com/taguette)
 
+Banner photograph: [Unseen Studio / Unsplash](https://unsplash.com/photos/s9CC2SKySJM), 2015.
+
 </div>

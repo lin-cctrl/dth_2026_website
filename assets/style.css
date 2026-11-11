@@ -1,21 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap");
 
-/* 基础颜色与字体 */
+/* Shared colour palette and typography */
+
 :root {
   --white: #ffffff;
-  --black: #203a35;
-  --blue: #146b68;
-  --light-blue: #e5f0eb;
-  --green: #367d68;
-  --purple: #766087;
-  --red: #a74444;
-  --yellow: #f0d795;
-
-  --background: #f7f8f4;
-  --muted: #52675f;
-  --border: #dce6de;
-  --gold: #c7ab69;
-
+  --black: #17243b;
+  --blue: #203d67;
+  --light-blue: #e9eff8;
+  --green: #167568;
+  --purple: #7152b3;
+  --red: #ac4931;
+  --yellow: #ead08e;
+  --muted: #5b6778;
+  --border: #dde3ec;
   --projectFont: "Lexend", Arial, sans-serif;
 }
 
@@ -23,22 +20,61 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: var(--black);
-  font-family: var(--projectFont);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.8;
+/* Page one: teal accents */
 
-  background-color: var(--background);
-  background-image: radial-gradient(
-    #dce6de 0.7px,
-    transparent 0.7px
-  );
-  background-size: 24px 24px;
+body {
+  --accent: #167568;
+  --accent-soft: #e6f5ef;
+  --accent-border: #a7d8c8;
+
+  --hero-image: url("./images/photo-code-workspace.png");
+  --hero-position: center 50%;
+
+  margin: 0;
+  color: var(--black);
+
+  background-color: #f6f7fb;
+  background-image:
+    radial-gradient(circle, #dde3ec .8px, transparent .8px),
+    radial-gradient(
+      ellipse at 0 450px,
+      var(--accent-soft),
+      transparent 650px
+    );
+
+  background-size: 28px 28px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+
+  font: 400 17px/1.85 var(--projectFont);
 }
+
+/* Page two: coral accents */
+
+body:has(
+  #topicCarousel[aria-label="Disadvantages of open source software"]
+) {
+  --accent: #ac4931;
+  --accent-soft: #fff0e8;
+  --accent-border: #e7b5a2;
+
+  --hero-image: url("./images/photo-security-keyboard.png");
+  --hero-position: center 48%;
+}
+
+/* Page three: purple accents */
+
+body:has(
+  #topicCarousel[aria-label="Taguette workflow"]
+) {
+  --accent: #7152b3;
+  --accent-soft: #f1ecfc;
+  --accent-border: #cab9ec;
+
+  --hero-image: url("./images/photo-research-notes.png");
+  --hero-position: center 52%;
+}
+
+/* General elements and layout */
 
 a {
   color: inherit;
@@ -55,18 +91,17 @@ button {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--green);
-  outline-offset: 4px;
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
 }
 
-/* 通用布局 */
 .flex {
   display: flex;
   flex-direction: row;
 }
 
 .defaultPageMargin {
-  width: calc(100% - 48px);
+  width: calc(100% - 64px);
   max-width: 1240px;
   margin: 0 auto;
 }
@@ -84,25 +119,25 @@ button:focus-visible {
   font-weight: 400;
 }
 
-/* 导航栏 */
+/* Navigation */
+
 header {
   background: var(--white);
 }
 
 #navBar {
-  min-height: 88px;
-  padding: 18px 0;
-  justify-content: space-between;
+  min-height: 100px;
+  padding: 20px 0;
   align-items: center;
+  justify-content: space-between;
   gap: 24px;
 }
 
 #navBar > a {
-  max-width: 560px;
-  color: var(--blue);
-  font-size: 19px;
+  max-width: 540px;
+  font-size: 18px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.5;
   text-decoration: none;
 }
 
@@ -113,88 +148,143 @@ header {
 #navBar nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
+  gap: 6px;
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
 .navLink {
   display: block;
   padding: 9px 14px;
-  border-radius: 8px;
-  font-size: 15px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
   text-decoration: none;
+
   transition:
-    background-color 0.2s,
-    color 0.2s;
+    background-color .2s,
+    color .2s;
 }
 
 .navLink:hover {
-  color: var(--blue);
-  background: var(--light-blue);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
-/* 标题横幅：恢复绿色渐变背景 */
+/* Highlight the current page */
+
+body:not(:has(#topicCarousel[aria-label="Disadvantages of open source software"])):not(:has(#topicCarousel[aria-label="Taguette workflow"])) .navLink[href$="page=page_one"],
+body:has(#topicCarousel[aria-label="Disadvantages of open source software"]) .navLink[href$="page=page_two"],
+body:has(#topicCarousel[aria-label="Taguette workflow"]) .navLink[href$="page=page_three"] {
+  color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: inset 0 -2px var(--accent);
+}
+
+/* Photographic banners */
+
 #pageHero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    120deg,
-    #133f39,
-    #286d59
-  );
+
+  width: calc(100% - 64px);
+  max-width: 1240px;
+  margin: 0 auto 20px;
+
+  border: 1px solid var(--border);
+  border-bottom: 5px solid var(--accent-border);
+  border-radius: 24px;
+
+  background-color: var(--light-blue);
+  background-image: var(--hero-image);
+  background-position: var(--hero-position);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+#pageHero::before,
+#pageHero::after {
+  content: none;
+}
+
+/* A light overlay keeps the heading readable */
+
 #bannerShadow {
-  position: relative;
-  min-height: 230px;
-  padding: 48px 24px;
+  min-height: 340px;
+  padding: 54px 44px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  background: linear-gradient(
+    90deg,
+    rgba(246, 247, 251, .97) 0%,
+    rgba(246, 247, 251, .92) 28%,
+    rgba(246, 247, 251, .75) 50%,
+    rgba(246, 247, 251, .12) 78%,
+    rgba(246, 247, 251, .04) 100%
+  );
 }
 
 #pageHero h1 {
   width: 100%;
-  max-width: 1000px;
+  max-width: 650px;
   margin: 0;
   padding: 0;
-  color: var(--white);
-  font-size: clamp(28px, 3.8vw, 46px);
+
+  color: var(--black);
+  font-size: clamp(30px, 3.8vw, 50px);
   font-weight: 600;
-  line-height: 1.3;
-  text-align: center;
+  line-height: 1.25;
+  letter-spacing: -.03em;
+  text-align: left;
+  text-wrap: balance;
 }
 
-/* 正文容器 */
+#pageHero h1::after {
+  content: "";
+  display: block;
+
+  width: 64px;
+  height: 4px;
+  margin: 22px 0 0;
+
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+/* Markdown content and reading cards */
+
 #content {
-  max-width: none;
-  margin: 48px 0 20px;
+  position: relative;
   padding: 0;
-  border: none;
+  margin: 48px 0 20px;
+
+  border: 0;
   background: transparent;
   box-shadow: none;
   transform: none;
   animation: none;
 }
 
-/* 独立阅读卡片 */
 .reading-card {
   position: relative;
   max-width: 840px;
-  margin: 0 auto 24px;
-  padding: 32px 40px;
+  padding: 36px 42px;
+  margin: 0 auto 34px;
 
   border: 1px solid var(--border);
-  border-radius: 16px;
-  background-color: var(--white);
-  box-shadow: 0 6px 24px rgba(32, 58, 53, 0.04);
+  border-top: 3px solid var(--accent-border);
+  border-radius: 20px;
 
-  transform-origin: center top;
+  background: var(--white);
+  box-shadow: 0 10px 35px #17243b08;
+  transform-origin: center;
+
   transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    background-color .3s,
+    border-color .3s,
+    box-shadow .3s;
 }
 
 .reading-card > :first-child {
@@ -205,27 +295,29 @@ header {
   margin-bottom: 0;
 }
 
-/* 正文标题 */
 .reading-card h2,
 .reading-card h3,
 .reading-card h4 {
-  color: var(--blue);
   line-height: 1.4;
+  letter-spacing: -.025em;
 }
 
 .reading-card h2 {
-  margin: 32px 0 16px;
+  margin: 30px 0 18px;
+  color: var(--blue);
   font-size: 27px;
   font-weight: 600;
 }
 
 .reading-card h3 {
-  margin: 28px 0 14px;
+  margin: 28px 0 16px;
+  color: var(--accent);
   font-size: 22px;
   font-weight: 500;
 }
 
 .reading-card h4 {
+  color: var(--accent);
   font-size: 19px;
 }
 
@@ -234,18 +326,18 @@ header {
 }
 
 .reading-card h2 + p {
-  font-weight: 300;
+  color: var(--muted);
+  font-weight: 400;
 }
 
 .reading-card strong {
   font-weight: 600;
 }
 
-/* 正文列表 */
 .reading-card ul,
 .reading-card ol {
-  margin: 0 0 24px;
-  padding-left: 26px;
+  margin: 0 0 22px;
+  padding-left: 25px;
 }
 
 .reading-card ul {
@@ -253,61 +345,91 @@ header {
 }
 
 .reading-card li {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+  padding-left: 4px;
 }
 
-/* 正文链接 */
+.reading-card li::marker {
+  color: var(--accent);
+}
+
 .reading-card a {
-  color: var(--blue);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: var(--accent);
+  text-underline-offset: 4px;
   overflow-wrap: anywhere;
 }
 
-/* 正文图片 */
-.reading-card img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 24px auto;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+.reading-card a:hover {
+  text-decoration-thickness: 2px;
 }
 
-/* 正文代码 */
 .reading-card code {
   padding: 2px 6px;
   border-radius: 5px;
-  background: #edf3ef;
+  background: var(--accent-soft);
 }
 
 .reading-card pre {
   overflow-x: auto;
   padding: 18px;
   border-radius: 10px;
-  background: #edf3ef;
+  background: var(--accent-soft);
 }
 
 .reading-card pre code {
   padding: 0;
 }
 
-/* 字符统计 */
+.reading-card blockquote {
+  margin: 24px 0;
+  padding: 14px 20px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+.reading-card img {
+  display: block;
+  margin: 24px auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.reading-card table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.reading-card th,
+.reading-card td {
+  padding: 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.reading-card th {
+  background: var(--accent-soft);
+}
+
+/* Character count */
+
 #charCount {
   max-width: 840px;
-  margin: 0 auto 40px;
+  margin: 0 auto 42px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   text-align: right;
 }
 
-/* 恢复之前较轻的悬停效果 */
+/* Card hover: 103% scale, +/-0.60deg wobble, 1.5 seconds */
+
 @media (hover: hover) and (pointer: fine) {
   .reading-card:hover {
     z-index: 2;
-    background-color: #f0f7f2;
-    border-color: #9dbba9;
-    box-shadow: 0 14px 36px rgba(32, 58, 53, 0.1);
+    background: var(--accent-soft);
+    border-color: var(--accent-border);
+    box-shadow: 0 24px 56px #17243b1a;
   }
 }
 
@@ -316,7 +438,7 @@ header {
   and (pointer: fine)
   and (prefers-reduced-motion: no-preference) {
   .reading-card:hover {
-    animation: reading-card-wiggle 0.9s ease-out 1 both;
+    animation: reading-card-wiggle 1.5s ease-out 1 both;
   }
 }
 
@@ -325,22 +447,37 @@ header {
     transform: scale(1) rotate(0);
   }
 
-  30% {
-    transform: scale(1.012) rotate(-0.2deg);
+  25% {
+    transform: scale(1.03) rotate(-.60deg);
   }
 
-  65% {
-    transform: scale(1.012) rotate(0.2deg);
+  50% {
+    transform: scale(1.03) rotate(.60deg);
+  }
+
+  75% {
+    transform: scale(1.03) rotate(-.30deg);
   }
 
   100% {
-    transform: scale(1.012) rotate(0);
+    transform: scale(1.03) rotate(0);
   }
 }
 
-/* 三栏轮播 */
+/* Carousel: preserve the classes used by the original script.js */
+
 #topicCarousel {
-  margin: 32px 0 56px;
+  padding: 28px 24px 22px;
+  margin: 38px 0 46px;
+
+  border: 1px solid var(--accent-border);
+  border-radius: 24px;
+
+  background: linear-gradient(
+    145deg,
+    var(--accent-soft),
+    #ffffff
+  );
 }
 
 #topicCarousel[hidden] {
@@ -348,29 +485,32 @@ header {
 }
 
 #carouselMain {
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
   gap: 18px;
 }
 
 .carouselArt {
   min-width: 0;
   flex-shrink: 1;
-  padding: 16px;
+  padding: 18px;
+
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
+
   background: var(--white);
   overflow-wrap: anywhere;
 
   transition:
-    width 0.35s ease,
-    opacity 0.25s ease;
+    width .45s ease,
+    opacity .3s ease,
+    box-shadow .3s ease;
 }
 
 .carouselArt h3 {
   margin: 0 0 16px;
-  color: var(--black);
-  font-size: 19px;
+  color: var(--blue);
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -378,38 +518,33 @@ header {
 .carouselArt img {
   display: block;
   width: 100%;
-  height: auto;
   margin: 0;
-  border: none;
-  border-radius: 8px;
+  border-radius: 9px;
   aspect-ratio: 2 / 1;
   object-fit: contain;
-  background-color: var(--background);
+  background: #f6f7fb;
 }
 
 .carouselArt p {
   margin: 16px 0 0;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
-/* 两侧较小的文章 */
 .outOfFocusArt {
   width: 18%;
-  opacity: 0.75;
-  font-weight: 400;
+  opacity: .8;
 }
 
-/* 中间放大的文章 */
 .inFocusArt {
   width: 64%;
-  border-color: var(--gold);
-  font-weight: 400;
-  box-shadow: 0 8px 24px rgba(32, 58, 53, 0.06);
+  border-color: var(--accent-border);
+  box-shadow: 0 12px 28px #17243b0d;
 }
 
 .inFocusArt h3 {
+  color: var(--accent);
   font-size: 25px;
   font-weight: 600;
 }
@@ -418,9 +553,9 @@ header {
   font-size: 17px;
 }
 
-/* 左右切换按钮 */
+/* Carousel controls */
+
 #carouselBtnContainer {
-  width: 100%;
   justify-content: center;
   gap: 16px;
   margin-top: 24px;
@@ -429,57 +564,64 @@ header {
 .carouselBtn {
   display: grid;
   place-items: center;
+
   width: 48px;
   height: 48px;
   padding: 0;
 
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent-border);
   border-radius: 50%;
-  color: var(--blue);
-  background-color: var(--white);
-  font-size: 32px;
+
+  color: var(--accent);
+  background: var(--white);
+  font-size: 30px;
   line-height: 1;
 
   cursor: pointer;
+
   transition:
-    background-color 0.2s,
-    color 0.2s,
-    transform 0.2s;
+    color .2s,
+    background-color .2s,
+    transform .2s;
 }
 
 .carouselBtn:hover {
   color: var(--white);
-  background-color: var(--green);
-  transform: translateY(-2px);
+  background: var(--accent);
+  transform: translateY(-3px);
 }
 
 .btnDisabled,
 .carouselBtn:disabled {
-  opacity: 0.35;
+  opacity: .35;
   cursor: default;
   pointer-events: none;
 }
 
-/* 页脚 */
+/* Footer */
+
 footer {
-  margin: 0;
-  background-color: var(--light-blue);
+  margin-top: 40px;
+  background: #17243b;
+  border-top: 4px solid var(--accent-border);
 }
 
 #footerBody {
-  min-height: 100px;
+  min-height: 110px;
   padding: 24px 0;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 #footerBody p {
   margin: 0;
-  font-size: 14px;
+  color: #e5eaf3;
+  font-size: 13px;
 }
 
-/* 平板布局 */
+/* Tablet layout */
+
 @media (min-width: 761px) and (max-width: 1000px) {
   .outOfFocusArt {
     width: 22%;
@@ -489,29 +631,35 @@ footer {
     width: 56%;
   }
 
+  .carouselArt {
+    padding: 14px;
+  }
+
   .carouselArt h3 {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .inFocusArt h3 {
-    font-size: 23px;
+    font-size: 22px;
   }
 }
 
-/* 手机布局 */
+/* Mobile layout */
+
 @media (max-width: 760px) {
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .defaultPageMargin {
-    width: calc(100% - 28px);
+    width: calc(100% - 32px);
   }
 
   #navBar {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
     gap: 16px;
+    padding: 20px 0;
   }
 
   #navBar > a {
@@ -524,12 +672,28 @@ footer {
 
   .navLink {
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 13px;
+  }
+
+  #pageHero {
+    width: calc(100% - 32px);
+    border-radius: 18px;
   }
 
   #bannerShadow {
-    min-height: 180px;
-    padding: 36px 20px;
+    min-height: 260px;
+    padding: 40px 24px;
+
+    background: linear-gradient(
+      90deg,
+      rgba(246, 247, 251, .96),
+      rgba(246, 247, 251, .78)
+    );
+  }
+
+  #pageHero h1 {
+    max-width: 100%;
+    font-size: 30px;
   }
 
   #content {
@@ -537,16 +701,22 @@ footer {
   }
 
   .reading-card {
-    padding: 24px 20px;
-    margin-bottom: 18px;
+    padding: 26px 22px;
+    margin-bottom: 26px;
+    border-radius: 16px;
   }
 
   .reading-card h2 {
-    font-size: 24px;
+    font-size: 23px;
   }
 
   .reading-card h3 {
-    font-size: 21px;
+    font-size: 20px;
+  }
+
+  #topicCarousel {
+    padding: 18px 14px;
+    border-radius: 18px;
   }
 
   #carouselMain {
@@ -564,9 +734,14 @@ footer {
   .inFocusArt h3 {
     font-size: 23px;
   }
+
+  .inFocusArt p {
+    font-size: 16px;
+  }
 }
 
-/* 尊重设备的减少动画设置 */
+/* Reduced-motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
   .reading-card,
   .carouselArt,
@@ -579,5 +754,94 @@ footer {
   .reading-card:hover,
   .carouselBtn:hover {
     transform: none;
+  }
+}
+/* Carousel card hover effects */
+
+.carouselArt {
+  position: relative;
+  transform-origin: center;
+}
+
+/* Hover styling for devices with a mouse */
+
+@media (hover: hover) and (pointer: fine) {
+  .carouselArt.inFocusArt:hover {
+    z-index: 2;
+    border-color: var(--accent);
+    box-shadow: 0 18px 40px rgba(23, 36, 59, .14);
+  }
+
+  .carouselArt.outOfFocusArt:hover {
+    opacity: 1;
+    border-color: var(--accent-border);
+    box-shadow: 0 10px 24px rgba(23, 36, 59, .08);
+  }
+}
+
+/* Animate only the focused card */
+
+@media
+  (hover: hover)
+  and (pointer: fine)
+  and (prefers-reduced-motion: no-preference) {
+  .carouselArt.inFocusArt:hover {
+    animation: carousel-card-wiggle 1s ease-out 1 both;
+  }
+}
+
+/* Carousel card hover effects */
+
+.carouselArt {
+  position: relative;
+  transform-origin: center;
+}
+
+/* Hover styling for devices with a mouse */
+
+@media (hover: hover) and (pointer: fine) {
+  .carouselArt.inFocusArt:hover {
+    z-index: 2;
+    border-color: var(--accent);
+    box-shadow: 0 18px 40px rgba(23, 36, 59, .14);
+  }
+
+  .carouselArt.outOfFocusArt:hover {
+    opacity: 1;
+    border-color: var(--accent-border);
+    box-shadow: 0 10px 24px rgba(23, 36, 59, .08);
+  }
+}
+
+/* Animate only the focused card */
+
+@media
+  (hover: hover)
+  and (pointer: fine)
+  and (prefers-reduced-motion: no-preference) {
+  .carouselArt.inFocusArt:hover {
+    animation: carousel-card-wiggle 1s ease-out 1 both;
+  }
+}
+
+@keyframes carousel-card-wiggle {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+
+  25% {
+    transform: scale(1.02) rotate(-.35deg);
+  }
+
+  50% {
+    transform: scale(1.02) rotate(.35deg);
+  }
+
+  75% {
+    transform: scale(1.02) rotate(-.15deg);
+  }
+
+  100% {
+    transform: scale(1.02) rotate(0);
   }
 }

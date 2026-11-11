@@ -34,4 +34,6 @@ Before switching, I would test my most important files and check where to get he
 
 [LibreOffice: About Converting Microsoft Office Documents](https://help.libreoffice.org/latest/en-US/text/shared/guide/ms_import_export_limitations.html)
 
+Banner photograph: [Towfiqu barbhuiya / Unsplash](https://unsplash.com/photos/FnA5pAzqhMM), 2021.
+
 </div>
