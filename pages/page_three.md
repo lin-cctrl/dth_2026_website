@@ -1,5 +1,7 @@
 # Taguette in European Studies
 
+<div class="reading-card">
+
 ## How I would use it
 
 Taguette is an open source tool for qualitative research. Rémi Rampin developed it, with Vicky Rampin and Sarah DeMott contributing requirements and testing. It lets researchers import documents, highlight passages, assign codes and export their work.
@@ -10,6 +12,10 @@ I would tag EU agricultural policy passages on drought as “climate adaptation�
 
 [Rampin & Rampin, 2021, Fig. 2 (CC BY 4.0)](https://doi.org/10.21105/joss.03522)
 
+</div>
+
+<div class="reading-card">
+
 ## Five checks
 
 1. **Licence.** The repository's `LICENSE.txt` contains the BSD 3-Clause licence. It allows people to use, modify and redistribute the software. Redistribution requires keeping the specified notices and disclaimer. Using contributors' names to endorse a derived product requires permission.
@@ -18,9 +24,19 @@ I would tag EU agricultural policy passages on drought as “climate adaptation�
 4. **Questions.** In issue #252, Rampin replied to a request about keeping headings in exported highlights. The issue remains open: a reply shows engagement, but it does not mean the feature has been delivered.
 5. **Money.** Donations through Open Collective help support development, maintenance and the public server.
 
+</div>
+
+<div class="carousel-slot"></div>
+
+<div class="reading-card">
+
 ### Would I rely on it for a thesis?
 
 Yes, after a small trial. I would keep the original files, code definitions and regular exports. If I changed tools, I could still read my highlights and codes, but moving annotations might take manual work.
+
+</div>
+
+<div class="reading-card">
 
 ## Sources
 
@@ -37,3 +53,5 @@ Yes, after a small trial. I would keep the original files, code definitions and 
 [GitLab: Issue #252 — Show Headings Over Highlights](https://gitlab.com/remram44/taguette/-/issues/252)
 
 [Open Collective: Taguette funding](https://opencollective.com/taguette)
+
+</div>

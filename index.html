@@ -14,7 +14,7 @@
     <header>
       <div id="navBar" class="flex defaultPageMargin">
         <a class="blueText" href="./index.html?page=page_one">
-          Open Source Software
+           Assignment 2: Lin's Website and Open Source
         </a>
 
         <nav aria-label="Main navigation">
@@ -125,6 +125,36 @@
       <div id="footerBody" class="defaultPageMargin flex">
         <p class="blueText">Digital Technologies in the Humanities, fall 2026</p>
       </div>
+        <footer>
+      <div id="footerBody" class="defaultPageMargin flex">
+        <p class="blueText">
+          Digital Technologies in the Humanities, fall 2026
+        </p>
+      </div>
     </footer>
+
+    <script>
+      (() => {
+        const content = document.getElementById("content");
+        const carousel = document.getElementById("topicCarousel");
+        if (!content || !carousel) return;
+
+        function moveCarousel() {
+          const slot = content.querySelector(".carousel-slot");
+          if (!slot) return;
+
+          observer.disconnect();
+          slot.replaceWith(carousel);
+        }
+
+        const observer = new MutationObserver(moveCarousel);
+        observer.observe(content, {
+          childList: true,
+          subtree: true
+        });
+
+        moveCarousel();
+      })();
+    </script>
   </body>
 </html>

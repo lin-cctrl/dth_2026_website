@@ -1,5 +1,7 @@
 # Disadvantages of Open Source Software
 
+<div class="reading-card">
+
 ## What can make open source difficult to use?
 
 A free download can save money on licences, but someone still has to maintain the software, answer questions and fix problems.
@@ -8,9 +10,21 @@ A free download can save money on licences, but someone still has to maintain th
 2. **Security.** The 2021 Log4j vulnerabilities show that publicly available code can still contain serious flaws. Access to the code makes inspection possible, but maintainers must prepare fixes and organisations must install them.
 3. **File compatibility.** LibreOffice documents limitations when converting complex Microsoft Office files. A student might need to repair a document's layout after export. A municipality changing office software may also need to test its templates and train staff.
 
+</div>
+
+<div class="carousel-slot"></div>
+
+
+<div class="reading-card">
+
 ### What should users plan for?
 
 Before switching, I would test my most important files and check where to get help. For an organisation, that means budgeting for support and maintenance alongside any savings on licences.
+
+</div>
+
+
+<div class="reading-card">
 
 ## Sources
 
@@ -19,3 +33,5 @@ Before switching, I would test my most important files and check where to get he
 [Apache Software Foundation: Apache Log4j CVEs](https://news.apache.org/foundation/entry/apache-log4j-cves)
 
 [LibreOffice: About Converting Microsoft Office Documents](https://help.libreoffice.org/latest/en-US/text/shared/guide/ms_import_export_limitations.html)
+
+</div>
