@@ -2,38 +2,36 @@
 
 <div class="reading-card">
 
-## What can make open source difficult to use?
+## Costs beyond licences
 
-A free download can save money on licences, but someone still has to maintain the software, answer questions and fix problems.
+Free downloads need maintenance, often by unpaid volunteers.
 
-1. **Maintenance and support.** The Taguette team explains that it does not work on the project full time. If a document fails to import near a deadline, a researcher may need to find a workaround while waiting for a reply.
-2. **Security.** The 2021 Log4j vulnerabilities show that publicly available code can still contain serious flaws. Access to the code makes inspection possible, but maintainers must prepare fixes and organisations must install them.
-3. **File compatibility.** LibreOffice documents limitations when converting complex Microsoft Office files. A student might need to repair a document's layout after export. A municipality changing office software may also need to test its templates and train staff.
+1. **Support:** Taguette's part-time team may need days to reply. A researcher facing a deadline needs a backup plan (Taguette, n.d.-a).
+2. **Security:** Log4j's 2021 vulnerabilities show that open code can contain serious flaws. Organisations must install fixes (Brockmeier, 2021).
+3. **Compatibility:** Complex Office files may lose formatting in LibreOffice. Students should test exports; municipalities must budget for migration and training (The Document Foundation, n.d.-a).
 
 </div>
 
 <div class="carousel-slot"></div>
 
-
 <div class="reading-card">
 
-### What should users plan for?
+### My approach
 
-Before switching, I would test my most important files and check where to get help. For an organisation, that means budgeting for support and maintenance alongside any savings on licences.
+I would test essential files and check support before switching. Licence savings do not remove upkeep costs. I would test one shared document with a classmate before moving all my work to a new tool.
 
 </div>
-
 
 <div class="reading-card">
 
 ## Sources
 
-[Taguette: Frequently Asked Questions](https://www.taguette.org/faq)
+Barbhuiya, T. (2021). *A golden padlock sitting on top of a keyboard* [Photograph]. Unsplash. <https://unsplash.com/photos/FnA5pAzqhMM>
 
-[Apache Software Foundation: Apache Log4j CVEs](https://news.apache.org/foundation/entry/apache-log4j-cves)
+Brockmeier, J. (2021, December 14). Apache Log4j CVEs. *The ASF Blog*. <https://news.apache.org/foundation/entry/apache-log4j-cves>
 
-[LibreOffice: About Converting Microsoft Office Documents](https://help.libreoffice.org/latest/en-US/text/shared/guide/ms_import_export_limitations.html)
+Taguette. (n.d.-a). *Frequently asked questions*. Retrieved November 12, 2026, from <https://www.taguette.org/faq>
 
-Banner photograph: [Towfiqu barbhuiya / Unsplash](https://unsplash.com/photos/FnA5pAzqhMM), 2021.
+The Document Foundation. (n.d.-a). *About converting Microsoft Office documents*. LibreOffice Help. Retrieved November 12, 2026, from <https://help.libreoffice.org/latest/en-US/text/shared/guide/ms_import_export_limitations.html>
 
 </div>
