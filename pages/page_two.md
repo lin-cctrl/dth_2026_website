@@ -4,11 +4,11 @@
 
 ## Costs beyond licences
 
-Free downloads need maintenance, often by unpaid volunteers.
+Free downloads still require maintenance. Costs can shift from licence fees to staff time, training and support.
 
-1. **Support:** Taguette's part-time team may need days to reply. A researcher facing a deadline needs a backup plan (Taguette, n.d.-a).
-2. **Security:** Log4j's 2021 vulnerabilities show that open code can contain serious flaws. Organisations must install fixes (Brockmeier, 2021).
-3. **Compatibility:** Complex Office files may lose formatting in LibreOffice. Students should test exports; municipalities must budget for migration and training (The Document Foundation, n.d.-a).
+1. **Maintenance and support.** Taguette's team works on it part time and asks users to allow days for replies (Taguette, n.d.-b). A researcher facing an import error needs a backup plan. Demanding instant help can burden volunteers; losing a maintainer may leave a project without fixes.
+2. **Security.** Log4j's 2021 vulnerabilities show that public code can contain serious flaws (Brockmeier, 2021). Someone must inspect it, prepare fixes and install updates. A municipality needs responsibility for patching, even when it pays no licence fee.
+3. **File compatibility.** Complex Office documents can need reformatting in LibreOffice (The Document Foundation, n.d.-a). Students should test tables and references before submission. Organisations must also check templates and exchanges with departments using other software.
 
 </div>
 
@@ -18,7 +18,9 @@ Free downloads need maintenance, often by unpaid volunteers.
 
 ### My approach
 
-I would test essential files and check support before switching. Licence savings do not remove upkeep costs. I would test one shared document with a classmate before moving all my work to a new tool.
+I would test a shared document with a classmate, compare its layout in both programs and check support options. An institution should budget for migration, training and upkeep, rather than count licence savings alone. The crucial question is whether someone has the time, skills and funding to keep the tool useful.
+
+I would also check how to recover the files if development stopped, so a future software change would not put my coursework at risk.
 
 </div>
 

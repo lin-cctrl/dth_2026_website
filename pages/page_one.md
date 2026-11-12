@@ -4,11 +4,11 @@
 
 ## Rights beyond price
 
-Open source permits inspecting, changing and sharing code (Open Source Initiative, 2024).
+Open source permits inspecting, modifying and redistributing code under its licence (Open Source Initiative, 2024). Its value extends beyond a free download.
 
-- **Inspect:** Researchers can examine how code processes data.
-- **Keep using:** Others can maintain a fork if development stops.
-- **Adapt:** A municipality can commission features for local needs.
+- **Inspect the code.** Researchers can examine how a tool processes evidence and record its version. This supports scrutiny, although access alone does not make results reproducible.
+- **Keep using it.** If development stops, another team can maintain a fork. Continuity remains possible if people supply the skills and resources.
+- **Adapt the software.** A municipality could commission an export feature or translated interface for local language and reporting needs. Several institutions could share that work and its costs.
 
 </div>
 
@@ -16,9 +16,9 @@ Open source permits inspecting, changing and sharing code (Open Source Initiativ
 
 <div class="reading-card">
 
-### LibreOffice
+### A student example: LibreOffice
 
-Students can edit assignments after graduation. Open code concerns software rights; open formats concern document exchange (The Document Foundation, n.d.-b).
+A student could keep editing assignments after a university subscription ends. LibreOffice's default OpenDocument format supports exchange between applications (The Document Foundation, n.d.-b). Open source concerns software rights; open formats concern documents. Together they offer more options when changing suppliers.
 
 ![LibreOffice Writer](./assets/images/libreoffice-writer.png)
 
@@ -30,7 +30,7 @@ Students can edit assignments after graduation. Open code concerns software righ
 
 ### Participation
 
-Users can translate menus or report bugs. Maintaining a fork still takes time and resources. Clear bug reports help maintainers reproduce problems, making it easier to improve the tool.
+Users can translate instructions, improve accessibility guidance or report a bug with steps to reproduce it. These contributions bring different needs into development. A university could recognise this work alongside programming: openness becomes more useful when people have time and support to participate.
 
 </div>
 

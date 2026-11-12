@@ -4,7 +4,11 @@
 
 ## A possible thesis tool
 
-Developed by Rémi Rampin, Taguette supports qualitative coding (Rampin & Rampin, 2021). I have not used it. I could compare EU policy passages tagged "climate adaptation" and "food security".
+Taguette supports importing documents, highlighting passages and assigning codes (Rampin & Rampin, 2021). Rémi Rampin developed it, with requirements and testing from Vicky Rampin and Sarah DeMott (Taguette, n.d.-a).
+
+I have not used it. I could import EU agricultural policy documents and define "climate adaptation" and "food security" before coding. I would highlight relevant passages, apply both codes where appropriate and compare excerpts across documents. Keeping notes on ambiguous cases would make my decisions easier to explain. Tag frequency alone would not establish a policy's priorities.
+
+I would keep dates and versions for every policy text, so changes in a document could be separated from changes in my own coding decisions.
 
 ![Tagged passages in Taguette](./assets/images/taguette-highlights.png)
 
@@ -18,11 +22,11 @@ Developed by Rémi Rampin, Taguette supports qualitative coding (Rampin & Rampin
 
 Checked November 12, 2026.
 
-1. **Licence:** [LICENSE.txt](https://github.com/remram44/taguette/blob/master/LICENSE.txt) specifies BSD 3-Clause: modification and redistribution are allowed, subject to notices and endorsement restrictions (Rampin & Taguette contributors, n.d.).
-2. **Last change:** Latest GitLab commit: September 28, 2026, changing a test setting (Rampin, 2026).
-3. **People:** 15 contributor records, 12 linked to accounts; records do not equal active maintainers (GitHub, n.d.).
-4. **Questions:** Issue #252 is open; I could not verify replies during this check (Benet, 2022).
-5. **Money:** Open Collective donations support the project (Taguette, n.d.-b).
+1. **Licence.** [LICENSE.txt](https://github.com/remram44/taguette/blob/master/LICENSE.txt) contains BSD 3-Clause. It permits modification and redistribution, requiring notices and disclaimers to be retained and restricting endorsement using contributors' names (Rampin & Taguette contributors, n.d.).
+2. **Last change.** The latest GitLab commit was September 28, 2026, changing an automated testing setting (Rampin, 2026).
+3. **People.** GitHub returned 15 contributor records, including 12 accounts. These are not necessarily unique or active maintainers (GitHub, n.d.).
+4. **Questions.** Issue #252 is open. I could not access its replies during this check, so response quality remains unverified (Benet, 2022).
+5. **Money.** Open Collective donations support the project, without guaranteeing future staffing (Taguette, n.d.-c).
 
 </div>
 
@@ -30,9 +34,9 @@ Checked November 12, 2026.
 
 <div class="reading-card">
 
-### My verdict
+### Would I rely on it?
 
-I would trial it before relying on it for a thesis, keeping originals and regular exports. Moving annotations to another tool could require manual work.
+I would first test importing a sample, coding passages and exporting highlights and code definitions. Exports are supported (Taguette, n.d.-a), but another tool may not import them directly. For a thesis, I would keep originals and regular exports, then check that each excerpt can still be traced to its source. The software organises evidence; I remain responsible for its interpretation.
 
 </div>
 
