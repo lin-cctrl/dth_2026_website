@@ -903,3 +903,19 @@ footer {
 
   transform: translate(-50%, -50%) translateX(3px);
 }
+
+/* Display both character counts */
+
+#writingCounts {
+  max-width: 840px;
+  margin: 0 auto 40px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+#writingCounts span {
+  color: var(--accent, var(--blue));
+  font-weight: 600;
+}

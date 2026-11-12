@@ -9,6 +9,69 @@
     <script src="./assets/content_load.js" defer></script>
     <script src="./assets/script.js" defer></script>
   </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const content = document.getElementById("content");
+    const bodyOutput = document.getElementById("bodyCharCount");
+    const totalOutput = document.getElementById("totalCharCount");
+
+    if (!content || !bodyOutput || !totalOutput) return;
+
+    // Count text with consecutive whitespace treated as one space.
+    function countCharacters(element) {
+      return element.textContent.replace(/\s+/g, " ").trim().length;
+    }
+
+    function updateWritingCounts() {
+      const currentText = content.textContent.trim();
+
+      if (!currentText || currentText === "Loading...") return;
+
+      const copy = content.cloneNode(true);
+
+      // Exclude the carousel, banner heading and non-content elements.
+      copy.querySelectorAll(
+        "#topicCarousel, h1, script, style, template"
+      ).forEach((element) => element.remove());
+
+      const totalCount = countCharacters(copy);
+
+      // Find the heading that begins the reference list.
+      const sourcesHeading = Array.from(
+        copy.querySelectorAll("h2, h3, h4")
+      ).find((heading) => {
+        return /^(sources|references)$/i.test(
+          heading.textContent.trim()
+        );
+      });
+
+      let bodyCount = totalCount;
+
+      if (sourcesHeading) {
+        const bodyRange = document.createRange();
+
+        bodyRange.selectNodeContents(copy);
+        bodyRange.setEndBefore(sourcesHeading);
+
+        bodyCount = countCharacters(bodyRange.cloneContents());
+      }
+
+      bodyOutput.textContent = bodyCount;
+      totalOutput.textContent = totalCount;
+    }
+
+    // Update when the Markdown loads or the carousel is moved.
+    const observer = new MutationObserver(updateWritingCounts);
+
+    observer.observe(content, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+
+    updateWritingCounts();
+  });
+</script>
 
   <body>
     <header>
@@ -35,8 +98,11 @@
       <section id="content">
         <p>Loading...</p>
       </section>
-      <p id="charCount" class="lightText"></p>
-
+    <p id="charCount" class="lightText" hidden></p>
+    <p id="writingCounts" class="lightText">
+       Body: <span id="bodyCharCount">—</span> characters<br />
+       Including sources: <span id="totalCharCount">—</span> characters
+    </p>
       <section id="topicCarousel" aria-label="Advantages of open source software">
         <div id="carouselMain" class="flex">
           <article class="carouselArt outOfFocusArt" data-artID="1">
